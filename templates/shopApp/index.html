@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %}
+    <title>Home</title>
+{% endblock  %}
+
+{% block 'content' %}
+    <h1>Home page</h1>
+    {% for product in data %}
+        <p>Product name: {{ product.name }}</p>
+        <p>Price: {{ product.price }}$</p>
+        <p>Description: {{ product.description }}</p>
+        <img src="{{ product.image.url }}" alt="" width="300px">
+        <p>Author: {{ product.author }}</p>
+
+        <br>
+        <a href="{% url 'detail' product.id %}">Detail</a>
+        <p>-------------------------------------------------</p>
+    {% endfor %}
+{% endblock %}

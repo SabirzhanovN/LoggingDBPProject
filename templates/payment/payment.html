@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block 'title' %} <title>Payment</title> {% endblock %}
+
+{% block 'content' %}
+
+    <h1>Payment page</h1>
+
+
+    <form action="{% url 'replenish_verdict' %}" method="post">
+        {% csrf_token %}
+        <input type="number" name="cash" placeholder="$" value="0">
+
+        <input type="submit" value="Replenish">
+    </form>
+
+{% endblock %}

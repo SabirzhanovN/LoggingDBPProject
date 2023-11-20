@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block 'title' %} <title>Dashboard</title> {% endblock %}
+
+{% block 'content' %}
+    <h1>Dashboard page</h1>
+    <h2>{{ user.username }}</h2>
+
+    <h2>Balance: {{ user.balance }}</h2>
+
+
+    <a href="{% url 'logout' %}"><input type="button" value="Logout"></a>
+    <br><br>
+
+    <a href="{% url 'payment' %}"><input type="button" value="Replenish"></a>
+
+    <br><br>
+    <a href="{% url 'delete_account' user.id %}"><input type="button" value="Delete account"></a>
+
+    <br><br>
+    <a href="{% url 'edit_profile' %}"><input type="button" value="Edit"></a>
+{% endblock %}

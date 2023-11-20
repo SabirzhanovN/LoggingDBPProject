@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block 'title' %} <title>{{ data.name }}</title> {% endblock %}
+
+{% block 'content' %}
+
+    <p>Product name: {{ data.name }}</p>
+    <p>Price: {{ data.price }}$</p>
+    <p>Description: {{ data.description }}</p>
+    <img src="{{ data.image.url }}" alt="" width="300px">
+    <p>Author: {{ data.author }}</p>
+
+    <a href="#">Buy</a><br>
+    <a href="#">To cart</a>
+{% endblock %}

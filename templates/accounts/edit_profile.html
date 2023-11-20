@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block 'title' %} <title>Edit</title> {% endblock %}
+
+{% block 'content' %}
+    <h1>Edit Profile {{ user.username }}</h1>
+
+<form action="{% url 'edit_profile' %}" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="First name" name="first_name" required>
+    <input type="text" placeholder="Last name" name="last_name" required>
+    <input type="email" placeholder="example@gmail.com" name="email" required>
+
+    <input type="submit" value="Edit">
+</form>
+
+{% endblock %}
